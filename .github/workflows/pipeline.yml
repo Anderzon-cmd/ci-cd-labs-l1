@@ -25,10 +25,13 @@ jobs:
           echo "=========================================="
 
       - name: Mostrar fecha y hora
-      run: date
+        run: date
 
       - name: Mostrar versión de Git
         run: git --version
+
+      - name: Version de docker
+        run: docker --version
 
       - name: Finalizar pipeline
         run: echo "Pipeline ejecutando correctamente."
