@@ -1,3 +1,3 @@
-### Pagina de información del proyecto
+### Página de información del proyecto
 
-En adelante escibiremos información relevante a este proyecto
+En adelante escribiremos información relevante en este proyecto
