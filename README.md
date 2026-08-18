@@ -1,5 +1,25 @@
 ### Página de información del proyecto
 
+#### Estructura del proyecto
+
+```text
+proyecto/
+├── .github/
+│   └── workflows/
+│       └── pipeline.yml
+├── app/
+│   ├── static/
+│   │   └── home.js
+│   └── home.html
+├── .gitignore
+├── .temp
+├── README.md
+├── eslint.config.mjs
+├── hello.txt
+├── package-lock.json
+└── package.json
+```
+
 Guia para la incorporación de cambios
 
 #### Rama
