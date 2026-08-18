@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo Pixelado</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: #ffffff;
+            color: #111111;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        main {
+            width: min(92vw, 980px);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 32px;
+            font-size: clamp(1.8rem, 6vw, 4rem);
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .pixel-board {
+            display: grid;
+            gap: 3px;
+            justify-content: center;
+            padding: 16px;
+            border: 2px solid #111111;
+            background: #ffffff;
+            overflow-x: auto;
+        }
+
+        .pixel {
+            width: clamp(8px, 1.5vw, 14px);
+            aspect-ratio: 1;
+            background: transparent;
+        }
+
+        .pixel.on {
+            background: #111111;
+        }
+
+        .pixel.off {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="pixel-board" class="pixel-board" aria-label="Texto Hola Mundo en pixeles"></section>
+    </main>
+    <script src="static/home.js"></script>
+</body>
+</html>

@@ -6,10 +6,34 @@ on:
       - main
 
 jobs:
+  lint:
+    name: Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar linter
+        run: npm run lint
+  
+  secret-scanner:
+    name: Secret Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Análisis de secretos
+        run: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
   hello-ci:
     name: Hello CI
     runs-on: ubuntu-latest
-
+    needs: [lint,secret-scanner]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,7 +56,7 @@ jobs:
 
       - name: Version de docker
         run: docker --version
-
+        
       - name: Finalizar pipeline
         run: echo "Pipeline ejecutando correctamente."
 
