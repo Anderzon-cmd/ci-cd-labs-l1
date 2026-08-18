@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request: 
+    branches:
+      - main
 
 jobs:
   lint:
@@ -16,7 +19,7 @@ jobs:
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.16.0'
+          node-version: 22
 
       - name: Instalar dependencias
         run: npm ci
